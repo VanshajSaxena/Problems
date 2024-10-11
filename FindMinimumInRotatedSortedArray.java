@@ -20,6 +20,10 @@
  */
 
 public class FindMinimumInRotatedSortedArray {
+
+  // The solution employs binary search to reduce the search space at each step.
+  // It identifies a sorted segment, then updates `lowest` with the value at the
+  // pointer that indicates the minimum value within that sorted segment.
   public int findMin(int[] nums) {
     int low = 0, high = nums.length - 1;
     int lowest = Integer.MAX_VALUE;
