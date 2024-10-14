@@ -1,7 +1,5 @@
 // https://leetcode.com/problems/valid-anagram/description/
 
-import java.util.HashMap;
-
 /**
  * **Valid Anagram**:
  *
