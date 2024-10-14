@@ -18,6 +18,8 @@ public class LargestOddNumberInString {
     int firstOdd = -1;
     for (int i = num.length() - 1; i >= 0; i--) {
       char c = num.charAt(i);
+      // This could further be optimised by checking for `1,3,5,7,9` to be equal to
+      // `c`. This way there would be no need to calculate modulo.
       if (Character.getNumericValue(c) % 2 == 1) {
         firstOdd = i;
         break;
