@@ -1,9 +1,5 @@
 // https://leetcode.com/problems/add-two-numbers/
 
-import java.util.List;
-
-import javax.crypto.Mac;
-
 /**
  * **Add Two Numbers**:
  *
@@ -72,7 +68,7 @@ public class AddTwoNumbers {
    * directly processing each node's element one by one. As it is done in normal
    * sum problems.
    * 
-   * A carry is propogated to the end of the number from the right to the left and
+   * A carry is propagated to the end of the number from the right to the left and
    * at each iteration a value is recorded.
    * If a carry is left after all iterations, it is added as a new node in the
    * list.
