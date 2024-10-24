@@ -7,7 +7,6 @@
  * `x^n`).
  */
 
-// In progress:
 public class PowXN {
 
   /**
