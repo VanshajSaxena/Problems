@@ -24,10 +24,8 @@ public class FibonacciNumber {
    * - Space: O(2^n) - Due to the recalculation of values for the same `n`.
    */
   public int fibRecur(int n) {
-    if (n == 0) {
-      return 0;
-    } else if (n == 1) {
-      return 1;
+    if (n <= 1) {
+      return n;
     }
     return fibRecur(n - 1) + fibRecur(n - 2);
   }
@@ -41,7 +39,7 @@ public class FibonacciNumber {
    * function calls and returns them later if they are needed from the cached
    * space.
    * Complexity:
-   * - Time: O(n) - Since each fibonacci number is calculated only once.
+   * - Time: O(n) - Since each Fibonacci number is calculated only once.
    * - Space: O(n) - The use of a HashMap.
    */
   public int fibMemoization(int n) {
@@ -63,8 +61,8 @@ public class FibonacciNumber {
   /**
    * This is the optimised approach that uses constant space and O(n) time.
    * Complexity:
-   * - Time: O(n) - Iteratively adds previous elements uptill n - 2.
-   * - Space: O(1) - Two variables
+   * - Time: O(n) - Iteratively adds previous elements up till `n - 2`.
+   * - Space: O(1) - Two variables.
    */
   public int fibIter(int n) {
     if (n <= 1) {
