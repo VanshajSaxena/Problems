@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/
 
 /**
- * **Sorted In Rotated Sorted Array Second**:
+ * **Sorted In Rotated Sorted Array II**:
  *
  * There is an integer array `nums` sorted in non-decreasing order (not
  * necessarily with **distinct** values).
@@ -19,9 +19,11 @@
  * You must decrease the overall operation steps as much as possible.
  */
 
-public class SearchInRotatedSortedArraySecond {
+public class SearchInRotatedSortedArrayII {
 
-  // See SearchInRotatedSortedArray.java
+  /**
+   * @see SearchInRotatedSortedArray
+   */
   public boolean search(int[] nums, int target) {
     int low = 0, high = nums.length - 1;
 
