@@ -52,9 +52,9 @@ public class CombinationSumII {
       }
 
       // Add the current candidate to the `combination` list
-      combination.add(candidates[idx]);
+      combination.add(candidates[i]);
       // Update target by reducing it with the value of current candidate
-      recurCombinationSum(candidates, target - candidates[i], result, idx + 1, combination);
+      recurCombinationSum(candidates, target - candidates[i], result, i + 1, combination);
       // remove the last candidate for backtracking.
       combination.remove(combination.size() - 1);
     }
