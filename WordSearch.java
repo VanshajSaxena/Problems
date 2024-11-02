@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/word-search/description/
 
 /**
- * WordSearch
+ * **Word Search**:
  *
  * Given an `m x n` grid of characters `board` and a string `word`, return
  * `true` _if `word` exists in the grid_.
