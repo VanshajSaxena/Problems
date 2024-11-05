@@ -24,17 +24,13 @@ public class MinimumNumberofChangestoMakeBinaryStringBeautiful {
   public int minChanges(String s) {
 
     char[] strCharArr = s.toCharArray();
-    int minChange1 = 0;
-    int minChange2 = 0;
+    int minChange = 0;
 
     for (int i = 1; i < strCharArr.length; i += 2) {
       if (strCharArr[i - 1] != strCharArr[i]) {
-        minChange1++;
-      }
-      if (strCharArr[i - 1] == strCharArr[i]) {
-        minChange2++;
+        minChange++;
       }
     }
-    return Math.min(minChange1, minChange2);
+    return minChange;
   }
 }
