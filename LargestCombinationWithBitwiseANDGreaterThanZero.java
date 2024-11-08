@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/largest-combination-with-bitwise-and-greater-than-zero/description/
 
 /**
  * **Largest Combination With Bitwise AND Greater Than Zero**:
@@ -6,8 +7,7 @@
  * `nums`.
  *
  * - For example, for `nums = [1, 5, 3]`, the bitwise AND is equal to `1 & 5 & 3
- * = 1`.
- * - Also, for `nums = [7]`, the bitwise AND is `7`.
+ * = 1`. Also, for `nums = [7]`, the bitwise AND is `7`.
  *
  * You are given an array of positive integers `candidates`. Evaluate the
  * **bitwise AND** of every combination of numbers of `candidates`. Each number
