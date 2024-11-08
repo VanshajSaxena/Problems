@@ -16,6 +16,17 @@
 
 public class MaximumXORforEachQuery {
   public int[] getMaximumXor(int[] nums, int maximumBit) {
+    int length = nums.length;
+    int maxNum = (1 << maximumBit) - 1;
 
+    int[] result = new int[length];
+    int prefixXor = 0;
+
+    for (int i = 0; i < length; i++) {
+      prefixXor ^= nums[i];
+      result[length - 1 - i] = prefixXor ^ maxNum;
+    }
+
+    return result;
   }
 }
