@@ -1,4 +1,3 @@
-import java.util.List;
 
 /**
  * **Largest Combination With Bitwise AND Greater Than Zero**:
@@ -19,11 +18,24 @@ import java.util.List;
  */
 
 public class LargestCombinationWithBitwiseANDGreaterThanZero {
-  public List<List<Integer>> largestCombination(int[] candidates) {
-
-  }
-
   public int largestCombination(int[] candidates) {
+    int[] bitCount = new int[32]; // Counts of 1s in each bit position
 
+    // Count bits in each position for all numbers
+    for (int num : candidates) {
+      for (int i = 0; i < 32; i++) {
+        if ((num & (1 << i)) != 0) { // Check if the i-th bit is 1
+          bitCount[i]++;
+        }
+      }
+    }
+
+    // Find the maximum count in bitCount, which gives the largest combination
+    int maxCombinationSize = 0;
+    for (int count : bitCount) {
+      maxCombinationSize = Math.max(maxCombinationSize, count);
+    }
+
+    return maxCombinationSize;
   }
 }
