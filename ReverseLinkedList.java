@@ -38,4 +38,19 @@ public class ReverseLinkedList {
     // `newHead` recorded from the last invocation is returned.
     return newHead;
   }
+
+  public ListNode iterReverseList(ListNode head) {
+    if (head == null || head.next == null) {
+      return head;
+    }
+    ListNode prev = null, next = null;
+    ListNode curr = head;
+    while (curr != null) {
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    return prev;
+  }
 }
