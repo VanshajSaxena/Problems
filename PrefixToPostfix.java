@@ -2,17 +2,7 @@
 
 import java.util.Stack;
 
-/**
- * This class provides a method to convert prefix expressions to postfix
- * expressions.
- */
 public class PrefixToPostfix {
-  /**
-   * Converts a prefix expression to a postfix expression.
-   *
-   * @param pre_exp The prefix expression to be converted.
-   * @return The equivalent postfix expression.
-   */
   static String preToPost(String pre_exp) {
     Stack<String> stack = new Stack<>();
     for (int i = pre_exp.length() - 1; i >= 0; i--) {
