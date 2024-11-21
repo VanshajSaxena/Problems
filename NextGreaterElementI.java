@@ -43,7 +43,7 @@ public class NextGreaterElementI {
     int[] ans = new int[nums1.length];
 
     for (int i = 0; i < ans.length; i++) {
-      ans[i] = map.get(nums2[i]);
+      ans[i] = map.get(nums1[i]);
     }
 
     return ans;
