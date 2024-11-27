@@ -13,7 +13,7 @@
 public class PowerOfFour {
 
   /**
-   * @see PowerOfThree
+   * @see PowerOfTwo
    */
   public boolean isPowerOfFour(int n) {
     // Check if n > 0, is power of 2, and has 1 in odd position
