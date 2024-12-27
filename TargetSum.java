@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/target-sum/description/
 
+import java.util.Arrays;
+
 /**
  * **Target Sum**:
  *
@@ -38,10 +40,39 @@ public class TargetSum {
 
   /**
    * [LeetCode
-   * Editorial](https://leetcode.com/problems/target-sum/editorial/?envType=daily-question&envId=2024-12-26#approach-2-recursion-with-memoization)
+   * Editorial](https://leetcode.com/problems/target-sum/editorial/#approach-2-recursion-with-memoization)
    */
-  // MARK: Pending.
   public int findTargetSumWaysII(int[] nums, int target) {
+    int totalSum = Arrays.stream(nums).sum();
+    int[][] memo = new int[nums.length][2 * totalSum + 1];
+
+    for (int[] row : memo) {
+      Arrays.fill(row, Integer.MIN_VALUE);
+    }
+
+    return calculateWays(nums, target, 0, 0, memo, totalSum);
   }
 
+  private int calculateWays(int[] nums, int target, int currSum, int currIdx, int[][] memo, int totalSum) {
+    if (currIdx == nums.length) {
+      if (currSum == target) {
+        return 1;
+      } else {
+        return 0;
+      }
+    } else {
+      if (memo[currIdx][currSum + totalSum] != Integer.MIN_VALUE) {
+        return memo[currIdx][currSum + totalSum];
+      }
+
+      int add = calculateWays(nums, target, currSum + nums[currIdx], currIdx + 1, memo, totalSum);
+
+      int sub = calculateWays(nums, target, currSum - nums[currIdx], currIdx + 1, memo, totalSum);
+
+      System.out.println("CurrLevel: " + currIdx + " CurrSum: " + currSum + " add+sub: " + (add + sub));
+      memo[currIdx][currSum + totalSum] = add + sub;
+
+      return memo[currIdx][currSum + totalSum];
+    }
+  }
 }
