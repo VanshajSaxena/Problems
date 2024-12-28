@@ -82,6 +82,6 @@ public class TargetSum {
    */
   // MARK: Pending.
   public int findTargetSumWaysIII(int[] nums, int target) {
-
+    return target;
   }
 }

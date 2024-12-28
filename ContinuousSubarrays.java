@@ -126,6 +126,6 @@ public class ContinuousSubarrays {
    */
   // MARK: Pending.
   public long continuousSubarraysIV(int[] nums) {
-
+    return 0;
   }
 }

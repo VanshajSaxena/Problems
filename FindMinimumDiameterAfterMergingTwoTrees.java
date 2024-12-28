@@ -121,7 +121,7 @@ public class FindMinimumDiameterAfterMergingTwoTrees {
   }
 
   // MARK: Pending.
-  minimumDiameterAfterMergeIII(int[][] edges1, int[][] edges2) {
-
+  public int minimumDiameterAfterMergeIII(int[][] edges1, int[][] edges2) {
+    return 0;
   }
 }
