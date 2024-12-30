@@ -66,6 +66,7 @@ public class NumberOfEnclaves {
   }
 
   // Iterative DFS
+  @SuppressWarnings("unused")
   private void sinkLandII(int[][] grid, int row, int col) {
     Stack<int[]> stack = new Stack<>();
     stack.push(new int[] { row, col });
