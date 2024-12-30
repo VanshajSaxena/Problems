@@ -19,7 +19,7 @@
  * Return _the minimum possible penalty after performing the operations_.
  */
 
-class Solution {
+public class MinimumLimitOfBallsInABag {
 
   public int minimumSize(int[] nums, int maxOperations) {
     int left = 1;
