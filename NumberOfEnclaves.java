@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/number-of-enclaves/description/
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -16,6 +18,9 @@ import java.util.Stack;
  */
 
 public class NumberOfEnclaves {
+  /**
+   * DFS Approach
+   */
   public int numEnclavesI(int[][] grid) {
     int result = 0;
     for (int i = 0; i < grid.length; i++) {
@@ -88,4 +93,29 @@ public class NumberOfEnclaves {
     }
   }
 
+  // BFS
+  @SuppressWarnings("unused")
+  private void sinkLandIII(int[][] grid, int row, int col) {
+    Queue<int[]> queue = new LinkedList<>();
+
+    queue.add(new int[] { row, col });
+
+    while (!queue.isEmpty()) {
+      int[] coordinate = queue.poll();
+      int currRow = coordinate[0];
+      int currCol = coordinate[1];
+
+      grid[currRow][currCol] = 0;
+
+      for (int i = 0; i < 4; i++) {
+        int newRow = currRow + dirs[i];
+        int newCol = currCol + dirs[i + 1];
+
+        if (newRow >= 0 && newCol >= 0 && newRow < grid.length && newCol < grid[0].length
+            && grid[newRow][newCol] == 1) {
+          queue.add(new int[] { newRow, newCol });
+        }
+      }
+    }
+  }
 }
