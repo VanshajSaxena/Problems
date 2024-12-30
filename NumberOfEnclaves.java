@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/number-of-enclaves/description/
 
+import java.util.Stack;
+
 /**
  * **Number Of Enclaves**:
  *
@@ -19,21 +21,21 @@ public class NumberOfEnclaves {
     for (int i = 0; i < grid.length; i++) {
       // First column.
       if (grid[i][0] == 1) {
-        sinkLand(grid, i, 0);
+        sinkLandI(grid, i, 0);
       }
       // Last column.
       if (grid[i][grid[0].length - 1] == 1) {
-        sinkLand(grid, i, grid[0].length - 1);
+        sinkLandI(grid, i, grid[0].length - 1);
       }
     }
     for (int i = 0; i < grid[0].length; i++) {
       // First Row.
       if (grid[0][i] == 1) {
-        sinkLand(grid, 0, i);
+        sinkLandI(grid, 0, i);
       }
       // Last Row.
       if (grid[grid.length - 1][i] == 1) {
-        sinkLand(grid, grid.length - 1, i);
+        sinkLandI(grid, grid.length - 1, i);
       }
     }
 
@@ -50,15 +52,39 @@ public class NumberOfEnclaves {
 
   private final int[] dirs = { 0, 1, 0, -1, 0 };
 
-  private void sinkLand(int[][] grid, int row, int col) {
+  // Recursive DFS
+  private void sinkLandI(int[][] grid, int row, int col) {
     grid[row][col] = 0;
     for (int i = 0; i < 4; i++) {
       int newRow = row + dirs[i];
       int newCol = col + dirs[i + 1];
 
       if (newRow >= 0 && newCol >= 0 && newRow < grid.length && newCol < grid[0].length && grid[newRow][newCol] == 1) {
-        sinkLand(grid, newRow, newCol);
+        sinkLandI(grid, newRow, newCol);
       }
     }
   }
+
+  // Iterative DFS
+  private void sinkLandII(int[][] grid, int row, int col) {
+    Stack<int[]> stack = new Stack<>();
+    stack.push(new int[] { row, col });
+    while (!stack.isEmpty()) {
+      int[] coordinate = stack.pop();
+      int currRow = coordinate[0];
+      int currCol = coordinate[1];
+      grid[currRow][currCol] = 0;
+
+      for (int i = 0; i < 4; i++) {
+        int newRow = currRow + dirs[i];
+        int newCol = currCol + dirs[i + 1];
+
+        if (newRow >= 0 && newCol >= 0 && newRow < grid.length && newCol < grid[0].length
+            && grid[newRow][newCol] == 1) {
+          stack.push(new int[] { newRow, newCol });
+        }
+      }
+    }
+  }
+
 }
