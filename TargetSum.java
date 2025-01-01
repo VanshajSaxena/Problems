@@ -21,11 +21,11 @@ import java.util.Arrays;
 public class TargetSum {
   public int findTargetSumWaysI(int[] nums, int target) {
     int ways = 0;
-    findTarget(nums, target, 0, 0, ways);
+    calculateWaysI(nums, target, 0, 0, ways);
     return ways;
   }
 
-  private void findTarget(int[] nums, int target, int currSum, int currIdx, int totalWays) {
+  private void calculateWaysI(int[] nums, int target, int currSum, int currIdx, int totalWays) {
     if (currIdx == nums.length) {
       if (currSum == target) {
         totalWays++;
@@ -33,14 +33,15 @@ public class TargetSum {
       return;
     }
 
-    findTarget(nums, target, currSum + nums[currIdx], currIdx + 1, totalWays);
+    calculateWaysI(nums, target, currSum + nums[currIdx], currIdx + 1, totalWays);
 
-    findTarget(nums, target, currSum - nums[currIdx], currIdx + 1, totalWays);
+    calculateWaysI(nums, target, currSum - nums[currIdx], currIdx + 1, totalWays);
   }
 
   /**
    * [LeetCode
    * Editorial](https://leetcode.com/problems/target-sum/editorial/#approach-2-recursion-with-memoization)
+   * Recursion with Memoization.
    */
   public int findTargetSumWaysII(int[] nums, int target) {
     int totalSum = Arrays.stream(nums).sum();
@@ -50,26 +51,21 @@ public class TargetSum {
       Arrays.fill(row, Integer.MIN_VALUE);
     }
 
-    return calculateWays(nums, target, 0, 0, memo, totalSum);
+    return calculateWaysII(nums, target, 0, 0, memo, totalSum);
   }
 
-  private int calculateWays(int[] nums, int target, int currSum, int currIdx, int[][] memo, int totalSum) {
+  private int calculateWaysII(int[] nums, int target, int currSum, int currIdx, int[][] memo, int totalSum) {
     if (currIdx == nums.length) {
-      if (currSum == target) {
-        return 1;
-      } else {
-        return 0;
-      }
+      return target == currSum ? 1 : 0;
     } else {
       if (memo[currIdx][currSum + totalSum] != Integer.MIN_VALUE) {
         return memo[currIdx][currSum + totalSum];
       }
 
-      int add = calculateWays(nums, target, currSum + nums[currIdx], currIdx + 1, memo, totalSum);
+      int add = calculateWaysII(nums, target, currSum + nums[currIdx], currIdx + 1, memo, totalSum);
 
-      int sub = calculateWays(nums, target, currSum - nums[currIdx], currIdx + 1, memo, totalSum);
+      int sub = calculateWaysII(nums, target, currSum - nums[currIdx], currIdx + 1, memo, totalSum);
 
-      System.out.println("CurrLevel: " + currIdx + " CurrSum: " + currSum + " add+sub: " + (add + sub));
       memo[currIdx][currSum + totalSum] = add + sub;
 
       return memo[currIdx][currSum + totalSum];
@@ -79,6 +75,7 @@ public class TargetSum {
   /**
    * [LeetCode
    * Editorial](https://leetcode.com/problems/target-sum/editorial/#approach-3-2d-dynamic-programming)
+   * 2D Dynamic Programming.
    */
   // MARK: Pending.
   public int findTargetSumWaysIII(int[] nums, int target) {
