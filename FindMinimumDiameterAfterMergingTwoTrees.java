@@ -77,7 +77,7 @@ public class FindMinimumDiameterAfterMergingTwoTrees {
     return adjList;
   }
 
-  // MARK: This needs revision.
+  // REVISION: This needs revision.
   public int minimumDiameterAfterMergeII(int[][] edges1, int[][] edges2) {
     int m = edges1.length, n = edges2.length;
 
