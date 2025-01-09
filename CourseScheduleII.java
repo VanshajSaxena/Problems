@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * **Course Schedule**:
+ * **Course Schedule II**:
  *
  * There are a total of `numCourses` courses you have to take, labeled from 0 to
  * `numCourses - 1`. You are given an array prerequisites where
@@ -16,7 +16,9 @@ import java.util.Queue;
  * - For example, the pair `[0, 1]`, indicates that to take course `0` you have
  * to first take course `1`.
  *
- * Return `true` if you can finish all courses. Otherwise, return `false`.
+ * Return _the ordering of courses you should take to finish all courses_. If
+ * there are many valid answers, return **any** of them. If it is impossible to
+ * finish all courses, return **an empty array**.
  */
 
 public class CourseScheduleII {
