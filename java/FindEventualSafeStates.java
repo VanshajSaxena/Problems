@@ -22,6 +22,10 @@ import java.util.Queue;
  */
 
 public class FindEventualSafeStates {
+  /**
+   * Kahn's Algorithm: [LeetCode
+   * Editorial](https://leetcode.com/problems/find-eventual-safe-states/editorial)
+   */
   public List<Integer> eventualSafeNodesI(int[][] graph) {
     int n = graph.length, inDegree[] = new int[n];
     List<List<Integer>> adj = new ArrayList<>();
@@ -65,6 +69,10 @@ public class FindEventualSafeStates {
     return safeNodes;
   }
 
+  /**
+   * Clever DFS: [LeetCode
+   * Editorial](https://leetcode.com/problems/find-eventual-safe-states/editorial)
+   */
   public List<Integer> eventualSafeNodesII(int[][] graph) {
     int n = graph.length;
     boolean[] visit = new boolean[n];
