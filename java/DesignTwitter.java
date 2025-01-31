@@ -26,7 +26,7 @@ import java.util.List;
  */
 
 public class DesignTwitter {
-  // MARK: Pending.
+  // PENDING:
   public DesignTwitter() {
 
   }

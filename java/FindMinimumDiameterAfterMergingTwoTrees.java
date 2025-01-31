@@ -120,7 +120,7 @@ public class FindMinimumDiameterAfterMergingTwoTrees {
     return new Pair(diameter, maxDepth1);
   }
 
-  // MARK: Pending.
+  // PENDING:
   public int minimumDiameterAfterMergeIII(int[][] edges1, int[][] edges2) {
     return 0;
   }

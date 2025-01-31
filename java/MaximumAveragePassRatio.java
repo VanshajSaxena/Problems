@@ -26,7 +26,7 @@
  * accepted.
  */
 
-// MARK: Pending.
+// PENDING:
 public class MaximumAveragePassRatio {
   public double maxAverageRatio(int[][] classes, int extraStudents) {
     double result = 0;

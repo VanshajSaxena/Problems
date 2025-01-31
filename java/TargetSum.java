@@ -77,7 +77,7 @@ public class TargetSum {
    * Editorial](https://leetcode.com/problems/target-sum/editorial/#approach-3-2d-dynamic-programming)
    * 2D Dynamic Programming.
    */
-  // MARK: Pending.
+  // PENDING:
   public int findTargetSumWaysIII(int[] nums, int target) {
     return target;
   }

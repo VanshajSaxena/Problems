@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/minimum-cost-for-tickets/description/
 
-// MARK: Pending.
+// PENDING:
 public class MinimumCostForTickets {
 
 }
